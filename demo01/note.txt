@@ -1,0 +1,14 @@
+说明下redux创建todolist 步骤
+1.安装环境先使用react 脚手架 create-react-app创建react项目 能正常启动
+2.安装redux npm install redux --save(开发环境)
+3.先使用react完成简单的 todolist 接着使用redux编写
+4.使用redux 操作
+    a 先创建仓库 （store文件夹下 创建index.js） 配置redux可调试
+    b 获取仓库数据 并通过操作页面元素触发事件 => 派发action 
+    c reducer 接受派发的action 并找到对应的类型值 深拷贝返回state 并返回一个新的newstate给store仓库，store仓库修改state值=> 订阅来修改store数据
+    d 页面数据发生改变 
+5.todolist进行优化
+    a 所有action类型 可在文件中定为常量并导出
+    b 所有action创建函数，也可定义文件导出
+    c 可将todolist.js 进行视图以及逻辑的分离，这样视图文件可编写为纯函数，减少内存开销，并解耦合
+    d 可通过easymock线上地址来模拟数据
