@@ -4,10 +4,15 @@
  * @Author: David Qu
  * @Date: 2021-05-07 15:27:37
  * @LastEditors: David Qu
- * @LastEditTime: 2021-05-08 18:11:31
+ * @LastEditTime: 2021-05-10 11:16:31
  */
 import React, {Component} from 'react'
-import store from "./store";
+//thunk 中间件写法  sagaIndex
+// import store from "./store/thunkIndex";
+//saga 中间件写法  sagaIndex
+import store from "./store/sagaIndex";
+//无中间件写法
+// import store from "./store";
 import TodoListUI from './TodoListUI'
 import { changeInputAction,addItemAction, delItemAction,getMyListAction } from "./store/actionCreators";
 export default class TodoList extends Component{
@@ -23,8 +28,10 @@ export default class TodoList extends Component{
         //reducer发生变化 就订阅来改变state状态
         store.subscribe(this.storeChange);
         //此处调用接口若是写在生命周期中会显得臃肿，写在redux中刚好
+        //saga写法
         const action = getMyListAction();
-        // const action = getTodoList();//thunk写法
+        //thunk写法
+        // const action = getTodoList();
         store.dispatch(action)
         console.log('action', action);
     }

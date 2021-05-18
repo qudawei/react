@@ -2,9 +2,9 @@
  * @Description: 
  * @Version: 
  * @Author: David Qu
- * @Date: 2021-05-07 15:56:23
+ * @Date: 2021-05-10 14:03:07
  * @LastEditors: David Qu
- * @LastEditTime: 2021-05-10 11:15:47
+ * @LastEditTime: 2021-05-10 14:09:20
  */
 import { createStore } from "redux";
 import reducer from "./reducer.js";

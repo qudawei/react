@@ -1,5 +1,5 @@
 说明下redux创建todolist 步骤
-1.安装环境先使用react 脚手架 create-react-app创建react项目 能正常启动
+1.安装环境先使用react 脚手架 npx create-react-app创建react项目 能正常启动
 2.安装redux npm install redux --save(开发环境)
 3.先使用react完成简单的 todolist 接着使用redux编写
 4.使用redux 操作
@@ -12,3 +12,25 @@
     b 所有action创建函数，也可定义文件导出
     c 可将todolist.js 进行视图以及逻辑的分离，这样视图文件可编写为纯函数，减少内存开销，并解耦合
     d 可通过easymock线上地址来模拟数据
+6.redux-thunk中间件的使用
+    a 安装redux-thunk
+    b 引入 import thunk from 'redux-thunk'
+    c 配置增强函数（配置redux调试工具）
+        // 此处的增强函数可以理解为链式函数
+        const composeEnhandler = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}):compose
+    d 使用增强函数 const enhandler = composeEnhandler(applyMiddleware(thunk))
+    e 放入到createStore第二个参数当中
+    f 具体使用 在生命周期componentDidMount 调用actioncreator 派发action（实际是两次派发）
+      第一次请求到数据，第二次派发到reducer 即可正常操作
+7.redux-saga中间件的使用
+    a 配置步骤同上a-e
+    b 使用时候需创建sagas.js文件，在当前目录下即可
+    c 需要先监听 mySagas sagaMiddleware.run(mySagas)
+    d 具体参看 sagas.js 
+8.redux-react 使用
+    a 安装react-redux redux 因为react-redux 是在redux基础上开始的
+    b react-redux 提供Provider Connect 
+        provider 提供器 可用于获取store仓库的属性
+        Connect 用于将仓库数据转为本地props 并提供方法 // 第一个参数接收数据 第二个参数改变数据
+        
