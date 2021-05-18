@@ -4,7 +4,7 @@
  * @Author: David Qu
  * @Date: 2021-04-26 16:44:03
  * @LastEditors: David Qu
- * @LastEditTime: 2021-05-06 15:50:56
+ * @LastEditTime: 2021-05-18 10:46:33
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -19,7 +19,6 @@ import ReactDOM from 'react-dom';
 import Example from './page/Hook'
 
 // import ChildrenProps from './page/ChildrenProps'
-import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -34,7 +33,3 @@ ReactDOM.render(
 );
 
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
