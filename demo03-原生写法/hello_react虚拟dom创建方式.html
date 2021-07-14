@@ -1,0 +1,28 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Author: David Qu
+ * @Date: 2021-07-07 14:47:35
+ * @LastEditors: David Qu
+ * @LastEditTime: 2021-07-07 14:57:16
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        // jsx写法   为什么用jsx呢？ 
+        const vDom = <h1>我是不是你最疼爱的人？</h1>
+        ReactDOM.render(vDom, document.getElementById('test'));
+    </script>
+</body>
+</html>

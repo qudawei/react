@@ -1,0 +1,53 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Author: David Qu
+ * @Date: 2021-07-07 14:47:35
+ * @LastEditors: David Qu
+ * @LastEditTime: 2021-07-07 19:29:08
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件三大属性</title>
+    <style>
+        .title{
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    <!-- 引入react核心 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- 引入react-dom 用于支持react操作dom -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- 引入babel 用于将jsx编译成js -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        const myid="lll"
+        // 创建类式组件 必须集成component
+        class Weather extends React.Component{
+            constructor(props){
+                super(props)
+                this.state = {
+                    isHot:true
+                }
+            }
+            // 必须有render
+            render(){
+                const {isHot} = this.state;
+                // render中this 是Weather的实例对象
+                return <h1>我是不是你最疼爱的人？{isHot?'是':'不是'}</h1>
+            }
+        }
+        ReactDOM.render(<Weather/>, document.getElementById('test'));
+        // 1.ReactDOM.render 将解析组件标签找到组件
+        // 2.react发现组件是用类定义的，随后用new创建实例，并用该实例调用render
+        // 3.将render返回的虚拟dom转为真实dom 
+    </script>
+</body>
+</html>

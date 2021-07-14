@@ -1,0 +1,63 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Author: David Qu
+ * @Date: 2021-07-07 14:47:35
+ * @LastEditors: David Qu
+ * @LastEditTime: 2021-07-07 16:17:25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .title{
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        const myid="lll"
+        // jsx写法 
+        const vDom = (
+            <div>
+                <ul id={myid}>
+                    <li>1.javascript xml</li>
+                    <li>2.xml（微信公众号使用xml） 慢慢被替换</li>
+                    <li>3.定义jsx不要写引号</li>
+                    <li>4.标签中使用js表达式时候要用花括号</li>
+                    <li className='title'>5.样式类名不能用class</li>
+                    <li style={{color:'#666',fontSize:'20px'}}>6.内联样式要用style=双花括号key value形式，第一个花括号表示表达式，第二个表示对象</li>
+                    <li>7.写的jsx标签 </li>
+                    <li>8.标签首字母小写则转为html标签，html无该标签对于标签则报错；标签字母大写则视为组件</li>
+                    <li>9.花括号里面只能写表达式</li>
+                </ul>
+                <ul>
+                    <li>一、表达式：一个表达式会返回一个值，可以放在任何一个需要值的地方,下面都是表达式 </li> 
+                    <li>2.a</li>   
+                    <li>3.a + b</li>   
+                    <li>4.demo(1)</li>
+                    <li>5.arr.map</li>
+                    <li>6.function name(params) {}</li>   
+                </ul>    
+                <ul>
+                    <li>二、语句：控制代码走向，下面都是语句 </li> 
+                    <li>2.if</li>   
+                    <li>3.for</li>   
+                    <li>4.swit</li>
+                </ul>   
+            
+            </div>
+        )
+        ReactDOM.render(vDom, document.getElementById('test'));
+    </script>
+</body>
+</html>

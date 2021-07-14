@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ * @Version: 
+ * @Author: David Qu
+ * @Date: 2021-07-07 14:47:35
+ * @LastEditors: David Qu
+ * @LastEditTime: 2021-07-07 15:16:18
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test"></div>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/javascript">
+        // js创建虚拟dom  标签名 属性 内容
+        // js创建dom写法是jsx创建dom的语法糖
+        const vDom = React.createElement('h1',{id:'title'}, '我是不是你最疼爱的人？')
+        ReactDOM.render(vDom, document.getElementById('test'));
+        // 虚拟dom与真实dom比较
+        // 1.本质是object对象
+        // 2.虚拟dom比较’轻‘ 真实dom比较’重‘
+        // 3.虚拟dom最终会转化为真实dom展现在页面上
+    </script>
+</body>
+</html>
